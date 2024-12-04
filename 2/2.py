@@ -1,7 +1,5 @@
-from itertools import pairwise
-
 def is_safe(x):
-  y = [y[0] - y[1] for y in pairwise(x)]
+  y = [y[0] - y[1] for y in zip(x, x[1:])]
   return not [x for x in y if x<1 or x>3] \
       or not [x for x in y if x>-1 or x<-3]
 
